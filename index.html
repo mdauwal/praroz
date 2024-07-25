@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    <div class="main">
+        <div class="navbar" id="navbar">
+            <div class="icon">
+                <h2 class="logo">M. Auwal</h2>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="#">ABOUT</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">SERVICE</a>
+                        <div class="dropdown-content">
+                            <a href="#">HTML CLASS</a>
+                            <a href="#">CSS CLASS</a>
+                            <a href="#">JAVASCRIPT CLASS</a>
+                        </div>
+                    </li>
+                    <li><a href="#">DESIGN</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                </ul>
+            </div>
+            <div class="search">
+                <input class="srch" type="search" name="" placeholder="Search a Course">
+                <a href="#"><button class="btn">Search</button></a>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <ion-icon name="menu"></ion-icon>
+            </div>
+        </div> 
+        <div class="content">
+            <div class="hero-text">
+                <h1>Web Design & <br><span>Development</span> <br>Course</h1>
+                <p class="par">Web Design focuses on the aesthetics and usability of a website. <br> 
+                    It involves creating the layout, visual elements, and user <br>interface to
+                    ensure an engaging and <br>intuitive experience.</p>
+                <button class="cn"><a href="signup.html">JOIN US</a></button>
+            </div>
+            <div class="form signin">
+                <h2>Login Here</h2>
+                <input type="email" id="login-email" placeholder="Enter Email Here">
+                <input type="password" id="login-password" placeholder="Enter Password Here">
+                <input type="password" id="login-password" placeholder="Retype Password">
+                <button class="btnn" onclick="validateLoginForm()">Login</button>
+                <p class="link">Don't have an account<br><a href="signup.html">Sign up</a> here</p>
+                <p class="liw">Log in with</p>
+                <div class="icons">
+                    <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-google"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-skype"></ion-icon></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

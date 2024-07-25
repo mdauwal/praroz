@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Signup Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">M. Auwal</h2>
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="#">ABOUT</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">SERVICE</a>
+                        <div class="dropdown-content">
+                            <a href="#">HTML CLASS</a>
+                            <a href="#">CSS CLASS</a>
+                            <a href="#">JAVASCRIPT CLASS</a>
+                        </div>
+                    </li>
+                    <li><a href="#">DESIGN</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                </ul>
+            </div>
+
+            <div class="search">
+                <input class="srch" type="search" name="" placeholder="Search a Course">
+                <a href="#"><button class="btn">Search</button></a>
+            </div>
+
+            <div class="hamburger" onclick="toggleMenu()">
+                <ion-icon name="menu"></ion-icon>
+            </div>
+
+        </div> 
+        <div class="wrapper">
+            <div class="form signup" id="registrationForm">
+                <h2>Sign Up</h2>
+                <input type="text" id="username" placeholder="Enter Username Here">
+                <input type="email" id="email" placeholder="Enter Email Here">
+                <input type="password" id="password" placeholder="Enter Password Here">
+                <input type="password" id="confirm-password" placeholder="Re-type Password Here">
+                <button class="btnn" onclick="validateSignupForm()">Sign Up</button>
+
+                <p class="link">Already have an account<br>
+                <a href="index.html">Login here</a></p>
+                <p class="liw">Sign up with</p>
+
+                <div class="icons">
+                    <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-google"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-skype"></ion-icon></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            let isValid = true;
+
+            const firstName = document.getElementById('firstNameInput').value.trim();
+            const lastName = document.getElementById('lastNameInput').value.trim();
+            const email = document.getElementById('emailInput').value.trim();
+            const password = document.getElementById('passwordInput').value.trim();
+            const phone = document.getElementById('phoneInput').value.trim();
+            const address = document.getElementById('addressInput').value.trim();
+
+            // Clear previous error messages
+            document.getElementById('firstNameError').textContent = '';
+            document.getElementById('lastNameError').textContent = '';
+            document.getElementById('emailError').textContent = '';
+            document.getElementById('passwordError').textContent = '';
+            document.getElementById('phoneError').textContent = '';
+            document.getElementById('addressError').textContent = '';
+
+            // First Name validation
+            if (firstName === '') {
+                document.getElementById('firstNameError').textContent = 'First name is required.';
+                isValid = false;
+            }
+
+            // Last Name validation
+            if (lastName === '') {
+                document.getElementById('lastNameError').textContent = 'Last name is required.';
+                isValid = false;
+            }
+
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                document.getElementById('emailError').textContent = 'Invalid email format.';
+                isValid = false;
+            }
+
+            // Password validation (Minimum 8 characters, at least one letter and one number)
+            const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+            if (!passwordRegex.test(password)) {
+                document.getElementById('passwordError').textContent = 'Password must be at least 8 characters long and contain at least one letter and one number.';
+                isValid = false;
+            }
+
+            // Phone validation (10 digits)
+            const phoneRegex = /^\d{10}$/;
+            if (!phoneRegex.test(phone)) {
+                document.getElementById('phoneError').textContent = 'Phone number must be 10 digits.';
+                isValid = false;
+            }
+
+            // Address validation
+            if (address === '') {
+                document.getElementById('addressError').textContent = 'Address is required.';
+                isValid = false;
+            }
+
+            if (isValid) {
+                // Submit the form or perform further actions
+                alert('Form submitted successfully!');
+            }
+        });
+    </script>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
